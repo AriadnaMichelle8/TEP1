@@ -1,0 +1,17 @@
+{
+  "name": "tareas",
+  "version": "1.0.0",
+  "description": "tarea2",
+  "license": "ISC",
+  "author": "mich",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+     "test": "node index.js",
+     "dev": "nodemon TServicioPizzas/index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}

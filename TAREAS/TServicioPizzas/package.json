@@ -1,0 +1,17 @@
+{
+  "name": "tserviciopizzas",
+  "version": "1.0.0",
+  "description": "Tarea2 Pizzas",
+  "license": "ISC",
+  "author": "Ariadna Michelle Castro Cruz",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
