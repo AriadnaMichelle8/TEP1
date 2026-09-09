@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pizzas Michis</h1>
+    <button onclick="obtenerPizza()"> Obtener Pizzas </button>
+    <script>
+        const url = "http://localhost:3000/api/v1/pizzas/1"
+        const requestOptions = {
+            method: "GET",
+            redirect: "follow"
+        };
+
+
+        async function obtenerPizza() {
+        const reponse = await fetch(url, requestOptions)
+        const json = await reponse.json() 
+        
+        console.log(json)
+
+        }
+    </script>
+
+     <button onclick="agregarPizza()"> Agregar Pizza </button>
+    <script>
+      async function agregarPizza() {
+  const url = "http://localhost:3000/api/v1/pizza";
+  const requestOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      nombre: "Mexicana",
+      descripcion: "Frijol, jalapeño, aguacate",
+      precio: 400
+    })
+  };
+  const response = await fetch(url, requestOptions);
+  const data = await response.json();
+  console.log("Pizza agregada exitosamente:", data);
+}
+    </script>
+</body>
+</html>
