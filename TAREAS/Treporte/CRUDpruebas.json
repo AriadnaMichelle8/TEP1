@@ -1,0 +1,109 @@
+{
+  "info": {
+    "_postman_id": "ebf56c36-fa6a-4f8c-937a-e7f5b8a57be8",
+    "name": "CRUD Pizzas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54386062",
+    "_collection_link": "https://go.postman.co/collection/54386062-ebf56c36-fa6a-4f8c-937a-e7f5b8a57be8?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "obtenerPizza",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/pizzas",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "pizzas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "agregarPizza",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombre\": \"Pepperoni\",\r\n    \"descripcion\": \"Salsa de tomate, queso y pepperoni\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/pizza",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "pizza"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "actualizarPizza",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Cuatro Quesos Especial\",\r\n  \"descripcion\": \"Mozzarella, Gorgonzola, Parmesano y Azul\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/pizzas/6aa75ec4273e168814482e32",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "pizzas",
+            "6aa75ec4273e168814482e32"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "eliminarPizza",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    }
+  ]
+}
