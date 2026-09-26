@@ -1,0 +1,16 @@
+{
+	"id": "b5d10403-ab44-47fe-b620-bbab2443a8d8",
+	"name": "dev",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"color": null,
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2026-09-22T23:32:45.080Z",
+	"_postman_exported_using": "Postman/12.27.6"
+}
