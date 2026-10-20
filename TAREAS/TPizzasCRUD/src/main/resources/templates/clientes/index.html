@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Clientes</title>
+</head>
+<body>
+    <h1>Directorio de Clientes</h1>
+    
+    <!-- Botón para ir al formulario de crear -->
+    <a href="/clientes/crear">
+        <button>Agregar Nuevo Cliente</button>
+    </a>
+    <br><br>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Dirección</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Este ciclo th:each recorre la lista de clientes que mandamos desde el controlador -->
+            <tr th:each="cliente : ${clientes}">
+                <td th:text="${cliente.id}"></td>
+                <td th:text="${cliente.nombre}"></td>
+                <td th:text="${cliente.telefono}"></td>
+                <td th:text="${cliente.direccion}"></td>
+                <td>
+                    <!-- Botón Editar -->
+                    <a th:href="@{/clientes/editar/{id}(id=${cliente.id})}">Editar</a>
+                    
+                    <!-- Botón Borrar (Debe ser un formulario POST por seguridad) -->
+                    <form th:action="@{/clientes/borrar/{id}(id=${cliente.id})}" method="POST" style="display:inline;">
+                        <button type="submit" onclick="return confirm('¿Seguro que deseas eliminar este cliente?');">Borrar</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <a href="/pizzas">Volver al menú de Pizzas</a>
+</body>
+</html>

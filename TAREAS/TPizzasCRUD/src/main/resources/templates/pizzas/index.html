@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pizzas Coliseo</h1>
+
+    <a href="/pizzas/crear">Agregar nueva pizza</a>
+
+    <table>
+        <tbody>
+            <tr th:each="pizza : ${pizzas}">
+                <td th:text="${pizza.nombre}"></td>
+                <td th:text="${pizza.descripcion}"></td>
+                <td>
+                    <a th:href="@{/pizzas/crear}">Agregar nueva pizza</a>
+                    <a th:href="@{/editar/${pizza.id}}">Editar</a>
+                    <a th:href="@{/eliminar/${pizza.id}}">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="/bebidas">Ir a Bebidas</a>
+    <a href="/tamanos">Elegir tamaño</a>
+    <a href="/clientes">Ir a Clientes</a>
+
+
+</body>
+</html>

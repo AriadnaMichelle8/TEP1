@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Tamaño</title>
+</head>
+<body>
+    <h1>Agregar un Nuevo Tamaño</h1>
+    
+    <form action="/tamanos/crear" method="POST">
+        <label for="nombre">Nombre (Ej. Chico, Mediano, Familiar):</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <button type="submit">Guardar Tamaño</button>
+    </form>
+    
+    <br>
+    <a href="/tamanos">Cancelar y volver a la lista</a>
+</body>
+</html>

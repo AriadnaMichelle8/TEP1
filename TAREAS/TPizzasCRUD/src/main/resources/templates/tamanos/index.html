@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tamaños de Pizza</title>
+</head>
+<body>
+    <h1>Catálogo de Tamaños</h1>
+    
+    <a href="/tamanos/crear">
+        <button>Agregar Nuevo Tamaño</button>
+    </a>
+    <br><br>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre del Tamaño</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="tamano : ${tamanos}">
+                <td th:text="${tamano.id}"></td>
+                <td th:text="${tamano.nombre}"></td>
+                <td>
+                    <a th:href="@{/tamanos/editar/{id}(id=${tamano.id})}">Editar</a>
+                    
+                    <form th:action="@{/tamanos/borrar/{id}(id=${tamano.id})}" method="POST" style="display:inline;">
+                        <button type="submit" onclick="return confirm('¿Eliminar este tamaño?');">Borrar</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <a href="/pizzas">Volver al menú de Pizzas</a>
+</body>
+</html>
